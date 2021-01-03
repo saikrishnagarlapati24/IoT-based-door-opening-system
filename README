@@ -1,0 +1,5 @@
+This is an IoT-based door opening system. It is done using nodeMCU esp8266, IR sensor, servo motor, AWS SNS, mqtt protocol.
+When a person comes in front of the IR sensor, the esp8266 publishes an mqtt message to the AWS IoT core. The message consists of an IP address. A webpage which is being hosted by 
+esp8266 is opened in the browser upon clicking on that IP address. This message is sent as an SMS notification to the subscribers of an SNS topic. The subscribers are the verified 
+persons who are only allowed to enter through the door. If the person in front of the IR sensor is a verified person, he gets the SMS notification. He has to enter an authentication 
+text in the webpage which he opens in the web browser. If the authentication text is correct the door opens.
